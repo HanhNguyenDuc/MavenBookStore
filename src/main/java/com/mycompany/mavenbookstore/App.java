@@ -6,6 +6,7 @@
 package com.mycompany.mavenbookstore;
 
 import utils.FormNhapDuLieu;
+import utils.Login;
 
 /**
  *
@@ -13,7 +14,7 @@ import utils.FormNhapDuLieu;
  */
 public class App {
     public static void main(String[] args) {
-        FormNhapDuLieu form = new FormNhapDuLieu();
-        form.show();
+        Login login = new Login(null);
+        login.show();
     }
 }

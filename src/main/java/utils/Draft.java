@@ -18,7 +18,8 @@ public class Draft extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Book book = new Book(10, "Sach giao khoa", "Kim dong", 2017, 30000, "resources/img/book_icon.png");
         this.setSize(500, 500);
-        jp = new BookShell(book);
+        jp = new CartPanel();
+        this.setMinimumSize(jp.getPreferredSize());
         this.add(jp);
     }
     public static void main(String[] args) {

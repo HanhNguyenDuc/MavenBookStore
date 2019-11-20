@@ -66,11 +66,8 @@ public class FormNhapDuLieu extends javax.swing.JFrame {
     
     public FormNhapDuLieu() {
         initComponents();
-        this.type.addItem("Best Seller");
-        this.type.addItem("Life");
-        this.type.addItem("Literature");
-        this.type.addItem("Math");
-        this.type.addItem("Programing");
+        this.type.addItem("Manga");
+        this.type.addItem("Book");
         this.imageChooser = new JFileChooser();
         imgPathButton1.addActionListener(new ActionListener() {
             @Override
