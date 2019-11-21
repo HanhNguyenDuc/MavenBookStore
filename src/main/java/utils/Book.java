@@ -15,6 +15,16 @@ class Book {
     private int namXuatBan;
     private double gia;
     private String imgPath;
+    private String description;
+    private int amount;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Book(int id, String ten, String nhaXuatBan, int namXuatBan, double gia, String imgPath) {
         this.setId(id);
@@ -23,6 +33,17 @@ class Book {
         this.namXuatBan = namXuatBan;
         this.gia = gia;
         this.setImgPath(imgPath);
+    }
+
+    public Book(int id, String ten, String nhaXuatBan, int namXuatBan, double gia, String imgPath, String description, int amount) {
+        this.id = id;
+        this.ten = ten;
+        this.nhaXuatBan = nhaXuatBan;
+        this.namXuatBan = namXuatBan;
+        this.gia = gia;
+        this.imgPath = imgPath;
+        this.description = description;
+        this.amount = amount;
     }
 
     public String getImgPath() {

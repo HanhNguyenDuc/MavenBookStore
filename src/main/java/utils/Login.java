@@ -139,7 +139,7 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 80, -1));
 
         jLabel3.setBackground(new java.awt.Color(158, 203, 249));
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N

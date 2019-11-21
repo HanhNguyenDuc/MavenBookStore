@@ -126,6 +126,7 @@ public class CartPanel extends javax.swing.JPanel {
         nextButton = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 800));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         totalPrice.setText("Total:");

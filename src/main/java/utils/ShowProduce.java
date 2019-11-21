@@ -16,6 +16,7 @@ public class ShowProduce extends javax.swing.JFrame {
      */
     public ShowProduce() {
         initComponents();
+        
     }
 
     /**

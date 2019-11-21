@@ -28,6 +28,6 @@ class ImageUtils{
     }
 
     public static void main(String args[]){
-        getImage("resources/img/life_book_3.jpg", 100, 100);
+        getImage("resources/img/73566751_p0.jpg", 100, 100);
     }
 }
