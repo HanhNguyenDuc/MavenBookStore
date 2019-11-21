@@ -6,13 +6,18 @@
 package utils;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /**
  *
  * @author ADMIN
  */
 public class BookDisplayShell extends javax.swing.JPanel {
-    Book book;
+    Book book = null;
+
+    public Book getBook() {
+        return book;
+    }
     /**
      * Creates new form BookDisplayShell
      */
@@ -20,8 +25,12 @@ public class BookDisplayShell extends javax.swing.JPanel {
         initComponents();
         this.book = book;
         System.out.println(book.getImgPath());
-        this.imgButton.setIcon(new ImageIcon(ImageUtils.getImage(book.getImgPath(), 100, 153)));
+        this.imgButton.setIcon(new ImageIcon(ImageUtils.getImage(book.getImgPath(), 120, 163)));
         this.nameLabel.setText(book.getTen());
+    }
+    
+    public BookDisplayShell(){
+        initComponents();
     }
 
     /**
@@ -39,14 +48,13 @@ public class BookDisplayShell extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(204, 255, 204));
 
-        imgButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\MavenBookStore\\resources\\img\\face_naruto.jpg")); // NOI18N
         imgButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imgButtonActionPerformed(evt);
             }
         });
 
-        nameLabel.setText("One Piece");
+        nameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -55,11 +63,10 @@ public class BookDisplayShell extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(imgButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nameLabel)
-                .addGap(72, 72, 72))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,7 +75,7 @@ public class BookDisplayShell extends javax.swing.JPanel {
                 .addComponent(imgButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nameLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -79,7 +86,7 @@ public class BookDisplayShell extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -93,4 +100,8 @@ public class BookDisplayShell extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel nameLabel;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getImgButton() {
+        return imgButton;
+    }
 }

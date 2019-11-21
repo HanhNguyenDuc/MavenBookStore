@@ -7,6 +7,7 @@ package utils;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -71,6 +72,27 @@ public class MainFrame extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 displayBook = getBookByType("Manga");
                 catalogPanel.updateBookDisplayList(displayBook);
+                for (BookDisplayShell bds : catalogPanel.getBookDisplayList()){
+                    bds.getImgButton().addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            process.removeAll();
+                            InfoPanel ip = new InfoPanel(bds.getBook());
+                            ip.setSize(200, 200);
+                            ip.getAddButton().addActionListener(new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {
+                                    if (ip.isAdded() == false)
+                                        stagedBookList.add(ip.getBook());
+                                        ip.setAdded(true);
+                                }
+                            });
+                            process.add(ip);
+                            process.setSize(new Dimension(123, 123));
+                            process.updateUI();
+                        }
+                    });
+                }
                 process.removeAll();
                 process.add(catalogPanel);
                 process.updateUI();
@@ -93,7 +115,7 @@ public class MainFrame extends javax.swing.JFrame {
         this.process.add(welcomePanel);
         try {
             Connection connection = MySQLConnUtils.getMySQLConnection();
-            statement = connection.createStatement();
+            statement = connection.createStatement();   
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -259,7 +281,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void but_home1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but_home1ActionPerformed
         this.process.removeAll();
-        this.add(welcomePanel);
+        this.process.add(welcomePanel);
         this.process.updateUI();
     }//GEN-LAST:event_but_home1ActionPerformed
 
@@ -278,6 +300,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
         this.process.removeAll();
         this.process.add(cartPanel);
+        cartPanel.updateCartList(stagedBookList);
         this.process.updateUI();
     }//GEN-LAST:event_cartButtonActionPerformed
 

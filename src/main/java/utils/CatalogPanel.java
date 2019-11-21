@@ -5,6 +5,8 @@
  */
 package utils;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -14,6 +16,11 @@ import java.util.ArrayList;
 public class CatalogPanel extends javax.swing.JPanel {
     private ArrayList<Book> bookList;
     private ArrayList<BookDisplayShell> bookDisplayList = new ArrayList<BookDisplayShell>();
+
+    public ArrayList<BookDisplayShell> getBookDisplayList() {
+        return bookDisplayList;
+    }
+    private int lastIndex = 9;
     /**
      * Creates new form CatalogPanel
      */
@@ -37,7 +44,9 @@ public class CatalogPanel extends javax.swing.JPanel {
         bookDisplayList.clear();
         this.displayArea.removeAll();
         for (Book book : bookList){
-            bookDisplayList.add(new BookDisplayShell(book));
+            BookDisplayShell bds = new BookDisplayShell(book);
+            
+            bookDisplayList.add(bds);
         }
         updateBookDisplayList();
         this.updateUI();
@@ -121,11 +130,32 @@ public class CatalogPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
+        displayArea.removeAll();
+        lastIndex = Math.max(lastIndex - 9, 9);
+        System.out.println(lastIndex);
+        for (int i=lastIndex - 9; i < lastIndex; i++){
+            if (i < bookDisplayList.size())
+                displayArea.add(bookDisplayList.get(i));
+            else
+                displayArea.add(new BookDisplayShell());
+        }
+        
+        displayArea.updateUI();
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+        displayArea.removeAll();
+        if (lastIndex + 9 < bookDisplayList.size() + 9){
+            lastIndex += 9;
+        }
+        for (int i=lastIndex - 9; i < lastIndex; i++){
+            if (i < bookDisplayList.size())
+                displayArea.add(bookDisplayList.get(i));
+            else
+                displayArea.add(new BookDisplayShell());
+        }
         
+        displayArea.updateUI();
     }//GEN-LAST:event_nextButtonActionPerformed
 
 

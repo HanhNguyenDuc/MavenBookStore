@@ -40,9 +40,49 @@ public class CartPanel extends javax.swing.JPanel {
         
     }
     
+    public void updateCartList(ArrayList<Book> bookList){
+        shellList.clear();
+        for (Book book : bookList){
+            BuyShellPanel shellPanel = new BuyShellPanel(book);
+            shellList.add(shellPanel);
+            shellPanel.getCheckbox().addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    shellPanel.recomputeValue();
+                    totalPrice.setText("Total: " + Double.toString(computeTotal()));
+                }
+            });
+            shellPanel.getAmountSpinner().addChangeListener(new ChangeListener() {
+                @Override
+                public void stateChanged(ChangeEvent e) {
+                    shellPanel.recomputeValue();
+                    if (shellPanel.isChecked() == true){
+                        totalPrice.setText("Total: " + Double.toString(computeTotal()));
+                    }
+                }
+            });
+            shellPanel.getDeleteButton().addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    shellList.remove(shellPanel);
+                    productReDisplay();
+                    totalPrice.setText("Total: " + Double.toString(computeTotal()));
+                }
+            });
+        }
+        this.productDisplayArea.removeAll();
+        lastIndex = 3;
+        for (int i=0; i< Math.min(3, shellList.size()); i++){
+            this.productDisplayArea.add(shellList.get(i));
+        }
+        this.productDisplayArea.updateUI();
+    }
+    
     public void initBuyShellPanelList(){
         for (Book book : cartList){
+            BuyShellPanel shellPanel = new BuyShellPanel(book);
             this.shellList.add(new BuyShellPanel(book));
+            
         }
     }
     /**
@@ -91,9 +131,6 @@ public class CartPanel extends javax.swing.JPanel {
                 }
             });
         }
-        this.productDisplayArea.add(shellList.get(0));
-        this.productDisplayArea.add(shellList.get(1));
-        this.productDisplayArea.add(shellList.get(2));
     }
     
     private void productReDisplay(){
