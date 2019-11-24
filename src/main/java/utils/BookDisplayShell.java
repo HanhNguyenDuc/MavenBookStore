@@ -46,7 +46,7 @@ public class BookDisplayShell extends javax.swing.JPanel {
         imgButton = new javax.swing.JButton();
         nameLabel = new javax.swing.JLabel();
 
-        jPanel6.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 0));
 
         imgButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
