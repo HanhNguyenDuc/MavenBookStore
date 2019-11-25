@@ -88,16 +88,18 @@ public class CatalogPanel extends javax.swing.JPanel {
         backButton = new javax.swing.JButton();
         nextButton = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(1300, 720));
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         displayArea.setPreferredSize(new java.awt.Dimension(600, 1600));
         displayArea.setLayout(new java.awt.GridLayout(3, 3, 3, 3));
-        jPanel1.add(displayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 630, 630));
+        jPanel1.add(displayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 800, 630));
 
         jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 26)); // NOI18N
         jLabel14.setText("Manga Book:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +107,7 @@ public class CatalogPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 80, -1));
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 60, 80, -1));
 
         nextButton.setText("Next");
         nextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,19 +115,20 @@ public class CatalogPanel extends javax.swing.JPanel {
                 nextButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(nextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 80, -1));
+        jPanel1.add(nextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 100, 80, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

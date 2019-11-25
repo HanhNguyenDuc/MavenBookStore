@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
@@ -316,6 +317,46 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void but_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but_search1ActionPerformed
         String bookName = this.searchBar.getText();
+        
+        Connection connection = null;
+        try {
+            connection = MySQLConnUtils.getMySQLConnection();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Statement statement= null;
+        try {
+            statement = connection.createStatement();
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        String sqlQuery = "Select bo_name,bo_id from books where bo_name = '" + bookName+ "'";
+        ResultSet rs = null;
+        try {
+            rs = statement.executeQuery(sqlQuery);
+            System.out.println(sqlQuery);
+            if (rs.next() == false){
+                JOptionPane.showMessageDialog(null, "Khong co sach nay ");
+            }
+            else{
+                 String id =rs.getString(2);
+                 
+               int c =JOptionPane.showConfirmDialog(null, "ban co muon hien san pham? ");
+                 if(c==1);
+               else if(c==0){
+               
+               }
+                 
+            }
+        } catch (SQLException ex) {
+            
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_but_search1ActionPerformed
 
     private void searchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarActionPerformed

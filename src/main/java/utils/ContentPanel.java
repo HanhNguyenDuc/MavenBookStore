@@ -29,12 +29,11 @@ public class ContentPanel extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        authorPanel = new javax.swing.JLabel();
+        namePanel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        costPanel = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1300, 1000));
 
@@ -43,34 +42,36 @@ public class ContentPanel extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setText("Buy");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 90, 50));
+        jButton1.setText("Add to Cart");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 110, 50));
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setText("Author:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 210, 30));
+        authorPanel.setBackground(new java.awt.Color(0, 0, 0));
+        authorPanel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        authorPanel.setText("Author:");
+        jPanel2.add(authorPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 210, 30));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font(".VnArial", 1, 36)); // NOI18N
-        jLabel2.setText("NARUTO");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 440, 50));
+        namePanel.setBackground(new java.awt.Color(0, 0, 0));
+        namePanel.setFont(new java.awt.Font(".VnArial", 1, 36)); // NOI18N
+        namePanel.setText("NARUTO");
+        jPanel2.add(namePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 440, 50));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
-
-        jTextField1.setEditable(false);
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 300, 400));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 280, 360));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1330, 380));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setText("Cost: ");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 210, 30));
+        costPanel.setBackground(new java.awt.Color(0, 0, 0));
+        costPanel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        costPanel.setText("Cost: ");
+        jPanel2.add(costPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 210, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,15 +95,18 @@ public class ContentPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel authorPanel;
+    private javax.swing.JLabel costPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel namePanel;
     // End of variables declaration//GEN-END:variables
 }
