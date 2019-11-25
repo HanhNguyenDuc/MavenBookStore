@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package com.mycompany.mavenbookstore;
-
-import utils.FormNhapDuLieu;
-import utils.Login;
+import com.mycompany.mavenbookstore.form.FormNhapDuLieu;
+import com.mycompany.mavenbookstore.form.LoginFrame;
 
 /**
  *
@@ -14,7 +13,7 @@ import utils.Login;
  */
 public class App {
     public static void main(String[] args) {
-        Login login = new Login(null);
+        LoginFrame login = new LoginFrame(null);
         login.show();
     }
 }
